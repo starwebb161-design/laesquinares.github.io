@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Esquina</title>
+  <meta name="description" content="Menú y reservas de La Esquina.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="portada">
+    <div class="contenedor">
+      <h1>La Esquina</h1>
+      <p class="horario">Cocina casera. Abrimos de martes a domingo, de 11 a. m. a 9 p. m.</p>
+      <div class="acciones">
+        <a class="boton" href="#reservas">Reservar mesa</a>
+        <a href="#menu">Ver el menú</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="aviso" class="aviso" hidden></div>
+
+  <main class="contenedor">
+    <section id="menu">
+      <h2>Menú</h2>
+      <nav id="categorias" aria-label="Categorías del menú"></nav>
+      <div id="platos">
+        <p class="vacio">Cargando el menú…</p>
+      </div>
+    </section>
+
+    <section id="reservas" class="separada">
+      <h2>Reserva una mesa</h2>
+      <p class="intro">Dinos cuándo vienes y cuántos son. Te llamamos para confirmar.</p>
+
+      <form id="form-reserva" class="formulario">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" required maxlength="100" autocomplete="name">
+        </div>
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" name="telefono" type="tel" required minlength="5" maxlength="30" autocomplete="tel">
+        </div>
+        <div class="campo">
+          <label for="personas">Personas</label>
+          <select id="personas" name="personas" required></select>
+        </div>
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" name="fecha" type="date" required>
+        </div>
+        <div class="campo">
+          <label for="hora">Hora</label>
+          <select id="hora" name="hora" required></select>
+        </div>
+        <div class="campo ancho">
+          <label for="notas">Notas (opcional)</label>
+          <textarea id="notas" name="notas" rows="3" maxlength="500"></textarea>
+        </div>
+        <div class="campo ancho">
+          <button class="boton" type="submit">Reservar mesa</button>
+        </div>
+        <p id="mensaje" class="mensaje" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p><strong>La Esquina</strong></p>
+      <p>Dirección: cambia este texto por la tuya.</p>
+      <p>Teléfono: 000-0000</p>
+      <p><a href="admin.html">Administrar</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
